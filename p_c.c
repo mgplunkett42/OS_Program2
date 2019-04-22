@@ -7,8 +7,8 @@ int main()
 {
 	void prod();
 	void cons();
-	int wait(int);
-	int signal(int);
+	int w_ait(int);
+	int s_ignal(int);
 	
 	printf("Buffer size: %d", e);
 	
@@ -57,32 +57,32 @@ int main()
 	return 0;
 }
 
-int wait(int k)
+int w_ait(int k)
 {
 	return(--k);
 }
 
-int signal(int k)
+int s_ignal(int k)
 {
 	return (++k);
 }
 
 void prod()
 {
-	m=wait(m);
-	f=signal(f);
-	e=wait(e);
+	m=w_ait(m);
+	f=s_ignal(f);
+	e=w_ait(e);
 	x++;
 	printf("\nProducer produces the item %d", x);
-	m=signal(m);
+	m=s_ignal(m);
 }
 
 void cons()
 {
-	m=wait(m);
-	f=wait(f);
-	e=signal(e);
+	m=w_ait(m);
+	f=w_ait(f);
+	e=s_ignal(e);
 	printf("\nConsumer consumes item %d", x);
 	x--;
-	m=signal(m);
+	m=s_ignal(m);
 }
