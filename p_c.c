@@ -11,7 +11,7 @@ int main()
 	int w_ait(int);
 	int s_ignal(int);
 	
-	printf(e, "Buffer size: %d");
+	printf(1, "Buffer size: %d", e);
 	
 
     if ((m == 1) && (e!=0))
@@ -55,7 +55,7 @@ int main()
     	printf(1, "\nBuffer is empty!");
 	
 	
-	return 0;
+	exit();
 }
 
 int w_ait(int k)
@@ -74,7 +74,7 @@ void prod()
 	f=s_ignal(f);
 	e=w_ait(e);
 	x++;
-	printf(x, "\nProducer produces the item %d");
+	printf(1, "\nProducer produces the item %d", x);
 	m=s_ignal(m);
 }
 
@@ -83,7 +83,7 @@ void cons()
 	m=w_ait(m);
 	f=w_ait(f);
 	e=s_ignal(e);
-	printf(x, "\nConsumer consumes item %d");
+	printf(1, "\nConsumer consumes item %d", x);
 	x--;
 	m=s_ignal(m);
 }
