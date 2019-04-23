@@ -1,5 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "types.h"
+#include "stat.h"
+#include "user.h"
 
 int m = 1, f = 0, e = 3, x = 0;
 
@@ -10,48 +11,48 @@ int main()
 	int w_ait(int);
 	int s_ignal(int);
 	
-	printf("Buffer size: %d", e);
+	printf(e, "Buffer size: %d");
 	
 
     if ((m == 1) && (e!=0))
 	prod();
 	else
-	printf("\nBuffer is full!");
+	printf(1, "\nBuffer is full!");
 
 	if ((m == 1) && (e!=0))
 	prod();
 	else
-	printf("\nBuffer is full!");
+	printf(1, "\nBuffer is full!");
 
 	if ((m == 1) && (e!=0))
 	prod();
 	else
-	printf("\nBuffer is full!");
+	printf(1, "\nBuffer is full!");
 
 	if ((m == 1) && (e!=0))
 	prod();
 	else
-	printf("\nBuffer is full!");
+	printf(1, "\nBuffer is full!");
 	
 	if ((m ==1) && (f!=0))
-    cons();
+   	 cons();
 	else
-    printf("\nBuffer is empty!");
+    	printf(1, "\nBuffer is empty!");
 
 	if ((m ==1) && (f!=0))
-    cons();
+    	cons();
 	else
-    printf("\nBuffer is empty!");
+    	printf(1, "\nBuffer is empty!");
 
 	if ((m ==1) && (f!=0))
-    cons();
+    	cons();
 	else
-    printf("\nBuffer is empty!");
+    	printf(1, "\nBuffer is empty!");
 
 	if ((m ==1) && (f!=0))
-    cons();
+    	cons();
 	else
-    printf("\nBuffer is empty!");
+    	printf(1, "\nBuffer is empty!");
 	
 	
 	return 0;
@@ -59,7 +60,7 @@ int main()
 
 int w_ait(int k)
 {
-	return(--k);
+	return (--k);
 }
 
 int s_ignal(int k)
@@ -73,7 +74,7 @@ void prod()
 	f=s_ignal(f);
 	e=w_ait(e);
 	x++;
-	printf("\nProducer produces the item %d", x);
+	printf(x, "\nProducer produces the item %d");
 	m=s_ignal(m);
 }
 
@@ -82,7 +83,7 @@ void cons()
 	m=w_ait(m);
 	f=w_ait(f);
 	e=s_ignal(e);
-	printf("\nConsumer consumes item %d", x);
+	printf(x, "\nConsumer consumes item %d");
 	x--;
 	m=s_ignal(m);
 }
